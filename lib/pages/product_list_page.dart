@@ -30,7 +30,7 @@ class _ProductListPageState extends State<ProductListPage> {
       return provider;
     }, child: Consumer<ProductListPageProvider>(
       builder: (_, provider, __) {
-        LogUtil.d('productList===>${jsonEncode(provider.productList)}');
+        // LogUtil.d('productList===>${jsonEncode(provider.productList)}');
 
         return Scaffold(
           appBar: AppBar(
