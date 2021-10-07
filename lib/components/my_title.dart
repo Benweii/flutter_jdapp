@@ -6,6 +6,7 @@ class MyTitle extends StatelessWidget {
   final Color color;
   final double fontSize;
   final FontWeight fontWeight;
+  final TextAlign textAlign;
   final TextStyle textStyle;
   final int maxLing;
   final TextOverflow overflow;
@@ -13,6 +14,8 @@ class MyTitle extends StatelessWidget {
   /// 容器样式修饰
   final EdgeInsets margin;
   final EdgeInsets padding;
+  final double width;
+  final double height;
   final Color bgColor;
 
   const MyTitle({
@@ -21,11 +24,14 @@ class MyTitle extends StatelessWidget {
     this.color = AppColors.color_333,
     this.fontSize = 16.0,
     this.fontWeight = FontWeight.bold,
+    this.textAlign,
     this.textStyle,
     this.maxLing = 2,
     this.overflow = TextOverflow.ellipsis,
     this.margin,
     this.padding,
+    this.width,
+    this.height,
     this.bgColor = AppColors.white,
   }) : super(key: key);
 
@@ -34,11 +40,14 @@ class MyTitle extends StatelessWidget {
     return Container(
       margin: this.margin,
       padding: this.padding,
+      width: this.width,
+      height: this.height,
       color: this.bgColor,
       child: Text(
         this.title,
         maxLines: this.maxLing,
         overflow: this.overflow,
+        textAlign: this.textAlign,
         style: this.textStyle != null
             ? this.textStyle
             : TextStyle(
