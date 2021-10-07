@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_jdapp/components/loading.dart';
 import 'package:flutter_jdapp/components/menu.dart';
 import 'package:flutter_jdapp/configs/app_colors.dart';
 import 'package:flutter_jdapp/configs/jd_api.dart';
@@ -49,13 +50,11 @@ class _HomePageState extends State<HomePage> {
         ),
         body: Consumer<HomePageProvider>(
           builder: (_, provider, __) {
-            LogUtil.d('5===>${jsonEncode(provider.model)}');
+            // LogUtil.d('5===>${jsonEncode(provider.model)}');
 
             // 加载动画
             if (provider.isLoading) {
-              return Center(
-                child: CupertinoActivityIndicator(),
-              );
+              return Loading();
             }
 
             // 捕获异常

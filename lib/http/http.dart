@@ -26,9 +26,9 @@ class Http {
       var respData = resp.data;
 
       if (resp.statusCode == 200) {
-        print('http request===>请求成功');
+        print('http request===>请求成功=>${resp.realUri}');
       } else {
-        print('http request===>请求失败');
+        print('http request===>请求失败=>${resp.realUri}');
       }
 
       // LogUtil.d('1===>resp===>${jsonDecode(respData)}'); // 无法decode

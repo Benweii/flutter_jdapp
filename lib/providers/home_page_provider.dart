@@ -1,10 +1,7 @@
-import 'dart:convert';
-
 import 'package:flutter/foundation.dart';
 import 'package:flutter_jdapp/configs/jd_api.dart';
 import 'package:flutter_jdapp/http/http.dart';
 import 'package:flutter_jdapp/models/home_page_model.dart';
-import 'package:flutter_jdapp/utils/log_util.dart';
 
 class HomePageProvider with ChangeNotifier {
   HomePageModel model;
