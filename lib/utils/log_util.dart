@@ -4,7 +4,7 @@ class LogUtil {
   static var _separator = "=";
   static var _split =
       "$_separator$_separator$_separator$_separator$_separator$_separator$_separator$_separator$_separator";
-  static var _title = "Flutter-Log";
+  static var _title = "New-Log";
   static var _isDebug = true;
   static int _limitLength = 800;
   static String _startLine = "$_split$_title$_split";

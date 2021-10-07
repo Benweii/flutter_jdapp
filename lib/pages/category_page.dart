@@ -6,6 +6,7 @@ import 'package:flutter_jdapp/components/menu.dart';
 import 'package:flutter_jdapp/components/my_title.dart';
 import 'package:flutter_jdapp/configs/app_colors.dart';
 import 'package:flutter_jdapp/models/category_content_model.dart';
+import 'package:flutter_jdapp/pages/product_list_page.dart';
 import 'package:flutter_jdapp/providers/category_page_provider.dart';
 import 'package:flutter_jdapp/utils/log_util.dart';
 import 'package:provider/provider.dart';
@@ -145,7 +146,14 @@ class _CategoryPageState extends State<CategoryPage> {
                                       iconHeight: 50,
                                       title: e.text,
                                       onTap: () {
-                                        print('你点击了===>${e.text}');
+                                        // 跳转子分类商品列表页面
+                                        // print('你点击了===>${e.text}');
+                                        Navigator.of(context)
+                                            .push(MaterialPageRoute(
+                                          builder: (context) => ProductListPage(
+                                            title: e.text,
+                                          ),
+                                        ));
                                       },
                                     ))
                                 .toList(),
