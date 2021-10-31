@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class PayWayItem extends StatelessWidget {
-  final Image icon;
+  final Widget icon;
   final String title;
   final String content;
 
@@ -31,7 +31,10 @@ class PayWayItem extends StatelessWidget {
                     ),
                     child: this.icon,
                   )
-                : Container(),
+                : SizedBox(
+                    height: 20.0,
+                    width: 20.0,
+                  ),
             // 右侧 内容
             Padding(
               padding: EdgeInsets.only(

@@ -51,9 +51,11 @@ class _IndexPageState extends State<IndexPage> {
             ),
           ],
           onTap: (index) {
-            setState(() {
-              bottomNaviProvider.bottomActiveNaviIndex = index;
-            });
+            // setState(() {
+            //   bottomNaviProvider.bottomActiveNaviIndex = index;
+            // });
+
+            bottomNaviProvider.changeBottomActiveNaviIndex(index);
           },
         ),
       ),

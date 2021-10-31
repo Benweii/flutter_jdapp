@@ -8,7 +8,7 @@ class PrimaryButton extends StatefulWidget {
   final CrossAxisAlignment crossAxisAlignment;
 
   /// 按钮图标
-  final Icon icon;
+  final Widget icon;
 
   /// 按钮文字样式设置
   final String text;
@@ -21,7 +21,7 @@ class PrimaryButton extends StatefulWidget {
   const PrimaryButton({
     Key key,
     this.width,
-    this.height = 60.0,
+    this.height,
     this.bgColor,
     this.mainAxisAlignment = MainAxisAlignment.center,
     this.crossAxisAlignment = CrossAxisAlignment.center,
@@ -44,14 +44,14 @@ class _PrimaryButtonState extends State<PrimaryButton> {
     return InkWell(
       child: Container(
         width: widget.width,
-        height: widget.height,
+        height: widget.height ?? 60.0,
         color: widget.bgColor,
         child: Column(
           mainAxisAlignment: widget.mainAxisAlignment,
           crossAxisAlignment: widget.crossAxisAlignment,
           children: [
             /// 按钮图标
-            widget.icon != null ? widget.icon : Container(),
+            widget.icon != null ? widget.icon : SizedBox(width: 0),
 
             /// 按钮文字
             Text(

@@ -1,12 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_jdapp/pages/index_page.dart';
 import 'package:flutter_jdapp/providers/bottom_navi_provider.dart';
+import 'package:flutter_jdapp/providers/cart_provider.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
+  // 解决报错问题：MissingPluginException(No implementation found for method getAll on channel plugins.flutter.io/shared_preferences)
+  // 实际验证是热加载有问题，可以不用加这段代码，重新运行下程序就行了
+  // SharedPreferences.setMockInitialValues({});
+
   runApp(
-    ChangeNotifierProvider.value(
-      value: BottomNaviProvider(),
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider.value(
+          value: BottomNaviProvider(),
+        ),
+        ChangeNotifierProvider<CartProvider>(
+          create: (BuildContext context) {
+            return CartProvider();
+          },
+        ),
+      ],
       child: MyApp(),
     ),
   );

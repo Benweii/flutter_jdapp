@@ -43,4 +43,25 @@ class ProductDetailPageProvider with ChangeNotifier {
       notifyListeners();
     });
   }
+
+  // 切换分期方式
+  changePayWay(int index) {
+    List<Baitiao> baitiao = this.model.baitiao;
+
+    if (baitiao[index].select == false) {
+      for (var i = 0; i < baitiao.length; i++) {
+        baitiao[i].select = i == index;
+      }
+
+      notifyListeners();
+    }
+  }
+
+  // 更改商品数量
+  changeProductCount(int count) {
+    if (count > 0 && count != this.model.partData.count) {
+      this.model.partData.count = count;
+      notifyListeners();
+    }
+  }
 }
